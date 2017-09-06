@@ -56,3 +56,13 @@ switch(Orientation){
 参考地址：
 1. [exif.js API](http://code.ciaoca.com/javascript/exif-js/demo/)
 2. [exif.js demo](http://blog.csdn.net/cdnight/article/details/46457241)
+
+## 四. 待解决问题
+
+1. h5 input file在小米6机型上，照相后取到图片文件对象 size=0，设置setTimeout 10s 左右可取到完整图片（时间与图片大小正相关）。
+</br>
+分析原因：小米内置浏览器问题，h5照相后，文件未立刻存储，获取文件对象失败。
+
+2. ios中，图片经canvas压缩，另存至data字段，请求接口，会造成浏览器崩溃；经canvas不压缩，用xzinput字段请求接口，则崩溃几率骤减。
+</br>
+分析原因：与上传图片（像素）大小 有关
