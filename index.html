@@ -6,19 +6,31 @@
 
 <body>
     <ol>
-        <li>img-upload.md</li>
-        <li>c2c-h5-v1.md</li>
+        <!--<li>img-upload.md</li>
+        <li>c2c-h5-v1.md</li>-->
+        <li>css规范.md</li>
+        <li>js规范.md</li>
+        <li>开发环境.md</li>
+        <li>模块化.md</li>
+        <li>终端规范.md</li>
+        <li>组件化.md</li>
+        <li>component.html</li>
+        <li>state-management.html</li>
     </ol>
-    <div id="show"></div>
+	
     <script src="./js/jquery-3.2.1.min.js"></script>
     <script src="./js/markdown-it.min.js"></script>
 
     <script>
         $('ol li').click(function() {
             var name = $(this).text();
-            $.get('./md/' + name, function(text) {
-                document.write(markdownit().render(text));
-            });
+			if (name.indexOf('.md') > -1) {
+				$.get('./md/' + name, function(text) {
+					document.write(markdownit().render(text));
+				});
+			} else {
+				location.href = './html/' + name;
+			}
         });
     </script>
 </body>
